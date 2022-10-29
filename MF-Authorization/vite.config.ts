@@ -63,7 +63,7 @@ export default defineConfig(({ mode }) => {
         //     "react-dom": "ReactDom",
         //   }),
         // ],
-        external: ["single-spa-react", "react", "react-dom"]
+        external: ["single-spa-react", "react", "react-dom", "@mui/material"]
       },
     },
     plugins: [
