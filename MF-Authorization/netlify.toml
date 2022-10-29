@@ -1,0 +1,4 @@
+[[headers]]
+    for = "/*"
+
+    Access-Control-Allow-Origin = "https://ztools-fe-core.netlify.app"
