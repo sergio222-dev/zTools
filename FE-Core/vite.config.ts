@@ -9,6 +9,7 @@ const { parsed } = require("dotenv").config({
   path: path.resolve(__dirname, "./src/.env")
 });
 
+
 // @ts-ignore
 export default defineConfig(() => {
   return {
@@ -54,7 +55,7 @@ export default defineConfig(() => {
     plugins: [
       ViteEjsPlugin(config => ({
         isLocal: config.mode === "development",
-        ...parsed
+        ...process.env
       })),
       handlebars(),
       dynamicImport()
