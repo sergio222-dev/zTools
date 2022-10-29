@@ -6,16 +6,22 @@ import handlebars from "vite-plugin-handlebars";
 const path = require("path");
 
 const { parsed } = require("dotenv").config({
-  path: path.resolve(__dirname, "./src/.env"),
+  path: path.resolve(__dirname, "./src/.env")
 });
 
+// @ts-ignore
 export default defineConfig(() => {
   return {
     root: "./src",
     rollupOptions: {
-      input: "ztools-root-config.ts",
-      format: "system",
-      preserveEntrySignatures: true,
+      input: "Ztools-root-config.ts",
+      preserveEntrySignatures: "strict"
+    },
+    server: {
+      port: 9000,
+    },
+    preview: {
+      port: 9000,
     },
     build: {
       outDir: "../dist",
@@ -24,30 +30,34 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: "./src/index.html",
-          "ztools-root-config": "./src/ztools-root-config.ts",
+          "ztools-root-config": "./src/Ztools-root-config.ts"
         },
-        preserveEntrySignatures: true,
+        preserveEntrySignatures: "strict",
         output: {
           entryFileNames: "[name].js",
           assetFileNames: "assets/[name].[ext]",
+          globals: {
+            "single-spa": "SingleSpa"
+          },
         },
-      },
+        external: ["single-spa"]
+      }
     },
-    resolve: {
-      fullySpecified: false,
-      modules: ["node_modules"],
-    },
+    // resolve: {
+    //   fullySpecified: false,
+    //   modules: ["node_modules"]
+    // },
     define: {
       define: "undefined",
-      "global.TYPED_ARRAY_SUPPORT": undefined,
+      "global.TYPED_ARRAY_SUPPORT": undefined
     },
     plugins: [
-      ViteEjsPlugin((config) => ({
+      ViteEjsPlugin(config => ({
         isLocal: config.mode === "development",
-        ...parsed,
+        ...parsed
       })),
-      dynamicImport(),
       handlebars(),
-    ],
+      dynamicImport()
+    ]
   };
 });

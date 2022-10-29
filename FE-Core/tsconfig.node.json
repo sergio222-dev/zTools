@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node"
+  },
+  "include": ["env.d.ts\", \"vite.config.*\", \"src/**/*"],
+  "exclude": ["src/**/*.test*"]
+}

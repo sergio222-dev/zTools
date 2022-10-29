@@ -15,7 +15,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-
     "baseUrl": "./src",
     "jsx": "react",
     "noEmit": false,
@@ -29,6 +28,7 @@
       "esnext"
     ],
   },
-  "include": ["src/**/*", "vite.config.ts", "env.d.ts"],
+//  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
+
