@@ -6,14 +6,14 @@ import dynamicImport from 'vite-plugin-dynamic-import'
 
 
 const path = require('path')
-const { parsed } = require('dotenv').config({
-  path: path.resolve(__dirname, './src/.env'),
-})
+// const { parsed } = require('dotenv').config({
+//   path: path.resolve(__dirname, './src/.env'),
+// })
 
 export default defineConfig(({ mode }) => {
   const publicAssetsBaseUrl =
     mode === 'production'
-      ? parsed.VITE_MF_LOGIN_PROD + '/'
+      ? process.env.VITE_MF_LOGIN_PROD + '/'
       : 'http://localhost:3001/'
 
   return {
