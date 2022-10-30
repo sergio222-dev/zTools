@@ -30,7 +30,9 @@
     "ts-config-single-spa": "^3.0.0",
     "typescript": "^4.8.4",
     "vite": "^3.1.6",
-    "vite-plugin-dynamic-import": "^1.2.2"
+    "vite-plugin-dynamic-import": "^1.2.2",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4"
   },
   "husky": {
     "hooks": {
@@ -45,8 +47,6 @@
   },
   "types": "dist/Ztools-mf-authorization.d.ts",
   "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
     "react-router-dom": "^6.4.2"
   },
   "engines": {
