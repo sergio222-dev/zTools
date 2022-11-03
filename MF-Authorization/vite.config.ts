@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-// import react from "@vitejs/plugin-react";
 import dynamicImport from 'vite-plugin-dynamic-import'
-// import externalGlobals from "rollup-plugin-external-globals";
+import mkcert from'vite-plugin-mkcert'
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+
 
 
 const path = require('path')
@@ -19,7 +20,8 @@ export default defineConfig(({ mode }) => {
   return {
     root: './src',
     server: {
-      port: 3001
+      port: 3001,
+      https: true,
     },
     preview: {
       port: 3001,
@@ -56,20 +58,29 @@ export default defineConfig(({ mode }) => {
           // },
           entryFileNames: '[name].js',
           assetFileNames: 'assets/[name].[ext]',
+          globals: {
+            Reflect: "reflect-metadata",
+          }
+          // preserveModules: true,
         },
-        // plugins: [
-        //   externalGlobals({
-        //     react: "React",
-        //     "react-dom": "ReactDom",
-        //   }),
-        // ],
+        plugins: [
+          // externalGlobals({
+          //   react: "React",
+          //   "react-dom": "ReactDom",
+          // }),
+          // enable tree shaking
+          nodeResolve(),
+        ],
         external: ["single-spa-react", "react", "react-dom", "@mui/material"]
       },
     },
     plugins: [
       reactRefresh(),
       // react(),
-      dynamicImport()
+      dynamicImport(),
+      // Create and install CERT for dev env, enable to use https
+      // https://github.com/liuweiGL/vite-plugin-mkcert
+      mkcert(),
     ],
     assetsInclude: ['**/*.png', '**/*.jpg', '**/*.svg'],
   }
