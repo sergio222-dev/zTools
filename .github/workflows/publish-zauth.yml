@@ -1,0 +1,10 @@
+name: 'publish-zauth'
+run-name: action triggered by @${{ github.actor }}
+
+on: [push]
+
+jobs:
+  publish-zauth:
+    runs-on: ubuntu-latest
+    steps:
+      - use: actions/checkout@v3
