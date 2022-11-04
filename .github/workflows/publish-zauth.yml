@@ -1,0 +1,39 @@
+name: 'publish-zauth'
+run-name: action triggered by @${{ github.actor }}
+
+on:
+  pull_request_target:
+    types: [closed]
+    branches: 
+      - 'main'
+    paths:
+      - 'package.json'
+    tags:
+      - release
+
+jobs:
+  publish-zauth:
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.ACCES_TOKEN_ZAUTH_UTILITY_MODULE }}
+    defaults:
+      run:
+        working-directory: './ZAuth'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.11.0
+      - name: 'Install PNPM'
+        run: npm install -g pnpm
+      - name: 'Install deps'
+        run: pnpm i
+      - name: 'Build'
+        run: pnpm build && pnpm build:types
+      - name: 'Set authToken token'
+        run: npm config set _authToken=$NPM_TOKEN
+      - name: 'Publish'
+        run: npm publish
+      - name: 'Remove authToken token'
+        if: ${{ always() }}
+        run: npm config delete _authToken
