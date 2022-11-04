@@ -22,5 +22,7 @@ jobs:
         run: pnpm i
       - name: 'Build'
         run: pnpm build && pnpm build:types
+      - name: 'Set auth token'
+        run: npm config set _auth=${{ NPM_TOKEN }}
       - name: 'Publish'
         run: npm publish
