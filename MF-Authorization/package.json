@@ -9,6 +9,7 @@
     "firebase": "^9.13.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.12",
