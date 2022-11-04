@@ -1,12 +1,21 @@
-import React from "react";
-import { Button, Paper, useTheme, Container, Box, TextField } from "@mui/material";
+import React, { useEffect } from "react";
+import {Paper, useTheme, Box} from "@mui/material";
 import styles from "./LoginForm.module.scss";
+import {Github} from "../../atom/ButtonProvider";
+import useAuthHook from "../../../../core/auth/presentation/useAuth.hook";
 
 const LoginForm: React.FC = () => {
   const theme = useTheme();
 
+  const [authClient] = useAuthHook();
+
+  const handlerTest = (e: React.FormEvent) => {
+    e.preventDefault();
+    authClient.signInGithub();
+  };
+
   return (
-    <div className={styles['login-container']}>
+    <div className={styles["login-container"]}>
       <Box>
         <Paper
           elevation={4}
@@ -16,50 +25,18 @@ const LoginForm: React.FC = () => {
           }}
         >
           <h1>Ztools 🗡</h1>
-          <form>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <TextField
-                required
-                label="Username"
-                placeholder="secret user name 🧑"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-              />
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <TextField
-                required
-                label="Password"
-                placeholder="secret password 🔒"
-                type="password"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-              />
-            </Box>
-            <Button type="submit">Enter</Button>
-          </form>
+          <Box
+            sx={{
+              width: 400,
+            }}
+          >
+            <Github onClick={handlerTest} />
+          </Box>
+          {/*<Button onClick={handleLogOut}>SignOut</Button>*/}
         </Paper>
       </Box>
     </div>
   );
 };
-
-LoginForm.defaultProps ={
-  a: "asd",
-}
 
 export default LoginForm;

@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import dynamicImport from "vite-plugin-dynamic-import";
 import handlebars from "vite-plugin-handlebars";
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import mkcert from'vite-plugin-mkcert';
 
 const path = require("path");
 
@@ -20,6 +22,7 @@ export default defineConfig(() => {
     },
     server: {
       port: 9000,
+      https: true,
     },
     preview: {
       port: 9000,
@@ -38,10 +41,14 @@ export default defineConfig(() => {
           entryFileNames: "[name].js",
           assetFileNames: "assets/[name].[ext]",
           globals: {
-            "single-spa": "SingleSpa"
+            "single-spa": "SingleSpa",
           },
         },
-        external: ["single-spa"]
+        external: ["single-spa", "zauth-utility-module"],
+        plugins: [
+          // enable tree shaking
+          nodeResolve()
+        ]
       }
     },
     // resolve: {
@@ -58,7 +65,8 @@ export default defineConfig(() => {
         ...process.env
       })),
       handlebars(),
-      dynamicImport()
+      dynamicImport(),
+      mkcert(),
     ]
   };
 });

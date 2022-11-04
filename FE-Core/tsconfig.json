@@ -11,6 +11,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "types": ["vite/client"],
     "moduleResolution": "node",
     "resolveJsonModule": true,

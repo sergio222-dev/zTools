@@ -1,23 +1,33 @@
 import {AuthClient} from "./AuthClient";
 
 export class AuthService {
-
-  private static instance: AuthService | null = null;
-  private static client: AuthClient | null = null;
+  private client: AuthClient | null = null;
 
   private constructor() {
   }
 
-  static setInstance(client: AuthClient) {
-    AuthService.client = client;
+  setClient(client: AuthClient) {
+    this.client = client;
   }
 
-  static getClient(): AuthService {
-    if (AuthService.client === null) throw new Error("A client auth method should be setted before initialize an instance");
-    if (AuthService.instance !== null) return AuthService.instance;
+  static getInstance(): AuthService {
+    if (window.ZAuth) return window.ZAuth;
+    window.ZAuth = new AuthService();
 
-    this.instance = new AuthService();
-    return this.instance;
+    return window.ZAuth;
+  }
+
+  getClient(): AuthClient {
+    this.validateClient();
+    return this.client as AuthClient;
+  }
+
+  private isClientCreated(): boolean {
+    return this.client !== null;
+  }
+
+  private validateClient(): void {
+    if (!this.isClientCreated()) throw new Error("A client auth method should be set before initialize an instance");
   }
 
 }

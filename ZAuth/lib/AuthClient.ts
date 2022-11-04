@@ -1,6 +1,6 @@
 type User = {};
 export type UserCredentials = {};
-export type CallbackAuthChanged = (user: User) => void;
+export type CallbackAuthChanged = (user: User | null) => void;
 
 export interface AuthClient {
   onAuthStateChanged(callback: CallbackAuthChanged): void;
