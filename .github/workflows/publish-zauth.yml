@@ -6,6 +6,9 @@ on: [push]
 jobs:
   publish-zauth:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ZAuth
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
