@@ -1,26 +1,26 @@
 import React, { EventHandler, useEffect } from "react";
 import {Button, Paper, useTheme, Container, Box, TextField, Alert} from "@mui/material";
 import styles from "./LoginForm.module.scss";
-import useAuthHook from "../../../../core/auth/presentation/useAuth.hook";
 import {Github} from "../../atom/ButtonProvider";
 
 const LoginForm: React.FC = () => {
   const theme = useTheme();
 
-  const [authService] = useAuthHook();
-
+  // const [authService] = useAuthHook();
+  //
   const handlerTest = (e: React.FormEvent) => {
     e.preventDefault();
 
-    authService.signInWithProvider();
+    ZAuth.getClient().;
   };
-
-  const handleLogOut = () => {
-    authService.signOut();
-  };
+  //
+  // const handleLogOut = () => {
+  //   authService.signOut();
+  // };
 
   useEffect(() => {
     // authService.getUser().then(a => console.log(a));
+    console.log("MF", ZAuth.getClient());
     console.log("location", window.location.pathname);
   }, []);
 

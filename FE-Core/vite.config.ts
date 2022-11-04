@@ -41,10 +41,10 @@ export default defineConfig(() => {
           entryFileNames: "[name].js",
           assetFileNames: "assets/[name].[ext]",
           globals: {
-            "single-spa": "SingleSpa"
+            "single-spa": "SingleSpa",
           },
         },
-        external: ["single-spa"],
+        external: ["single-spa", "zauth-utility-module"],
         plugins: [
           // enable tree shaking
           nodeResolve()

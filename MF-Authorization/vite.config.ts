@@ -71,7 +71,7 @@ export default defineConfig(({ mode }) => {
           // enable tree shaking
           nodeResolve(),
         ],
-        external: ["single-spa-react", "react", "react-dom", "@mui/material"]
+        external: ["single-spa-react", "react", "react-dom", "@mui/material", "zauth-utility-module"]
       },
     },
     plugins: [

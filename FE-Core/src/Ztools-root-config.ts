@@ -6,8 +6,7 @@ import {
   constructLayoutEngine
 } from "single-spa-layout";
 import microfrontendLayout from "./microfrontend-layout.html?raw";
-import { FirebaseAuthClient } from "./core/authorization/infrastructure/firebaseAuthClient";
-import { BasicAuthService } from "./core/authorization/application/auth.service";
+import { FirebaseAuthClient, AuthService } from "zauth-utility-module";
 
 const routes = constructRoutes(microfrontendLayout);
 const applications = constructApplications({
@@ -25,16 +24,36 @@ applications.forEach(registerApplication);
 layoutEngine.activate();
 start();
 
-// Authorization validation
-const authClient = new FirebaseAuthClient();
-const authService = new BasicAuthService(authClient);
+// Authorization initialization
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_MF_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_MF_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_MF_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_MF_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MF_FIREBASE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_MF_FIREBASE_APP_ID
+};
 
-authService.onAuthStateChanged((user) => {
+const authClient = new FirebaseAuthClient(firebaseConfig);
+
+console.log("auth", AuthService);
+
+const instance = AuthService.getInstance();
+instance.setClient(authClient);
+console.log("this is only exec once");
+
+authClient.onAuthStateChanged((user) => {
   // // TODO route should be in a config
-  // if (user && window.location.pathname !== "/login") return;
-  // const origin = window.location.origin;
-  // // TODO route should be in a config
-  // window.location.replace(origin + "/login");
-  console.log("QXC authed", user);
+  if (!user && window.location.pathname === "/login") return;
+  if (user && window.location.pathname !== "/login") return;
+  if (!user && window.location.pathname !== "/login") {
+    const origin = window.location.origin;
+    // // TODO route should be in a config
+    window.location.replace(origin + "/login");
+  }
 });
+
+
+
+// const auth = AuthService.getClient();
 
