@@ -1,4 +1,0 @@
-export default {
-  key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52cG9maHZndGRyeHlxbGxodnBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY5ODgwMTQsImV4cCI6MTk4MjU2NDAxNH0.zseqK7VdRs2p3AMFDWQSfcsCi1oaEKHYk9d5UQDyNvQ",
-  url: "https://nvpofhvgtdrxyqllhvpi.supabase.co"
-}

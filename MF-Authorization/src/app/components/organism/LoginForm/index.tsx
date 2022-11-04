@@ -1,28 +1,18 @@
-import React, { EventHandler, useEffect } from "react";
-import {Button, Paper, useTheme, Container, Box, TextField, Alert} from "@mui/material";
+import React, { useEffect } from "react";
+import {Paper, useTheme, Box} from "@mui/material";
 import styles from "./LoginForm.module.scss";
 import {Github} from "../../atom/ButtonProvider";
+import useAuthHook from "../../../../core/auth/presentation/useAuth.hook";
 
 const LoginForm: React.FC = () => {
   const theme = useTheme();
 
-  // const [authService] = useAuthHook();
-  //
+  const [authClient] = useAuthHook();
+
   const handlerTest = (e: React.FormEvent) => {
     e.preventDefault();
-
-    ZAuth.getClient().;
+    authClient.signInGithub();
   };
-  //
-  // const handleLogOut = () => {
-  //   authService.signOut();
-  // };
-
-  useEffect(() => {
-    // authService.getUser().then(a => console.log(a));
-    console.log("MF", ZAuth.getClient());
-    console.log("location", window.location.pathname);
-  }, []);
 
   return (
     <div className={styles["login-container"]}>

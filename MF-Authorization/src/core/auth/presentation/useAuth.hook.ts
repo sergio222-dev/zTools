@@ -1,11 +1,11 @@
-import { IAuthService } from "../application/auth.service";
 import useService from "../../shared/application/useService";
 import AuthTypes from "../infrastructure/DI/auth.types";
+import { AuthClient } from "zauth-utility-module/dist/types/AuthClient";
 
-const useAuthService: () => [IAuthService] = () => {
-  const authService = useService<IAuthService>(AuthTypes.AuthService);
+const useAuthClient: () => [AuthClient] = () => {
+  const authClient = useService<AuthClient>(AuthTypes.AuthClient);
 
-  return [authService];
+  return [authClient];
 };
 
-export default useAuthService;
+export default useAuthClient;

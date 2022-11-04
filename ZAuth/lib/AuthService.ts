@@ -11,7 +11,7 @@ export class AuthService {
   }
 
   static getInstance(): AuthService {
-    if (window.ZAuth !== null) return window.ZAuth;
+    if (window.ZAuth) return window.ZAuth;
     window.ZAuth = new AuthService();
 
     return window.ZAuth;

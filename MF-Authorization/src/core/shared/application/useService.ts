@@ -1,11 +1,11 @@
 import { useContainer } from "../../../app/context/container.context";
 
 const useService = <T>(type: symbol) => {
-  const context = useContainer();
+  const container = useContainer();
 
-  if (context === null) throw new Error("Container not initialized");
+  if (container === null) throw new Error("Container not initialized");
 
-  return context.get<T>(type);
+  return container.get<T>(type);
 }
 
 export default useService;

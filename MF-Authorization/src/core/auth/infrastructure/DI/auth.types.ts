@@ -1,5 +1,5 @@
 const AuthTypes = {
-  AuthService: Symbol("AuthService")
+  AuthClient: Symbol("AuthClient")
 }
 
 export default AuthTypes;

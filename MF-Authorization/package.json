@@ -42,7 +42,7 @@
     "vite-plugin-dynamic-import": "^1.2.3",
     "vite-plugin-mkcert": "^1.10.1",
     "yalc": "1.0.0-pre.53",
-    "zauth-utility-module": "^0.0.6"
+    "zauth-utility-module": "^0.0.8"
   },
   "husky": {
     "hooks": {

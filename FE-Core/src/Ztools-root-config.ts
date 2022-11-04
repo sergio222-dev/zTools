@@ -35,25 +35,24 @@ const firebaseConfig = {
 };
 
 const authClient = new FirebaseAuthClient(firebaseConfig);
-
-console.log("auth", AuthService);
-
 const instance = AuthService.getInstance();
+
 instance.setClient(authClient);
-console.log("this is only exec once");
 
 authClient.onAuthStateChanged((user) => {
   // // TODO route should be in a config
   if (!user && window.location.pathname === "/login") return;
   if (user && window.location.pathname !== "/login") return;
+  if (user && window.location.pathname === "/login") {
+    const origin = window.location.origin;
+    window.location.replace(origin + "/");
+  }
   if (!user && window.location.pathname !== "/login") {
     const origin = window.location.origin;
     // // TODO route should be in a config
     window.location.replace(origin + "/login");
   }
 });
-
-
 
 // const auth = AuthService.getClient();
 

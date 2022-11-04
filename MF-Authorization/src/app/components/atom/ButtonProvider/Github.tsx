@@ -6,7 +6,6 @@ import styles from "./styles.module.scss";
 interface GithubButtonProps extends ButtonProps {}
 
 const Github = ({ ...rest }: GithubButtonProps) => {
-  console.log("Github ", styles);
   return (
     <Button
       fullWidth
