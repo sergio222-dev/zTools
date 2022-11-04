@@ -4,12 +4,10 @@ run-name: action triggered by @${{ github.actor }}
 on:
   pull_request_target:
     types: [closed]
-    branches: 
+    branches:
       - 'main'
     paths:
-      - 'package.json'
-    tags:
-      - release
+      - 'Zauth/package.json'
 
 jobs:
   publish-zauth:
