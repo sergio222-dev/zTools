@@ -23,6 +23,9 @@
       "import": "./dist/zauth.js"
     }
   },
+  "dependencies": {
+    "firebase": "^9.13.0"
+  },
   "devDependencies": {
     "@types/node": "^18.11.9",
     "typescript": "^4.8.4",
@@ -30,7 +33,5 @@
     "vite-plugin-dynamic-import": "^1.2.3",
     "yalc": "1.0.0-pre.53"
   },
-  "dependencies": {
-    "firebase": "^9.13.0"
-  }
+  "packageManager": "^pnpm@7.14.2"
 }
