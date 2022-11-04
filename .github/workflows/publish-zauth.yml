@@ -16,3 +16,5 @@ jobs:
           node-version: 18.11.0
       - name: 'Install PNPM'
         run: npm install -g pnpm
+      - name: 'Install deps'
+        run: pnpm i
