@@ -7,10 +7,11 @@ on:
     branches:
       - 'main'
     paths:
-      - 'Zauth/package.json'
+      - 'ZAuth/package.json'
 
 jobs:
   publish-zauth:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       NPM_TOKEN: ${{ secrets.ACCES_TOKEN_ZAUTH_UTILITY_MODULE }}
