@@ -22,9 +22,9 @@ jobs:
         run: pnpm i
       - name: 'Build'
         run: pnpm build && pnpm build:types
-      - name: 'Set auth token'
-        run: npm config set _auth=$NPM_TOKEN
+      - name: 'Set authToken token'
+        run: npm config set _authToken=$NPM_TOKEN
       - name: 'Publish'
         run: npm publish
-      - name: 'Remove auth token'
-        run: npm config delete _auth
+      - name: 'Remove authToken token'
+        run: npm config delete _authToken
