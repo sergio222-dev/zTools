@@ -9,7 +9,9 @@ import {ContainerContext} from "./app/context/container.context";
 const container = BuildContainer();
 
 export default function Root(props: any) {
+  // Set tittle app
   document.title = "Ztools login form";
+
   return (
     <StyledEngineProvider injectFirst>
       {/*https://github.com/mui/material-ui/issues/24109*/}

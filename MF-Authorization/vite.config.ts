@@ -64,14 +64,10 @@ export default defineConfig(({ mode }) => {
           // preserveModules: true,
         },
         plugins: [
-          // externalGlobals({
-          //   react: "React",
-          //   "react-dom": "ReactDom",
-          // }),
           // enable tree shaking
           nodeResolve(),
         ],
-        external: ["single-spa-react", "react", "react-dom", "@mui/material", "zauth-utility-module"]
+        external: ["single-spa-react", "react", "react-dom", "@emotion/react", "@emotion/styled", "zauth-utility-module"]
       },
     },
     plugins: [
