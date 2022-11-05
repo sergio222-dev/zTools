@@ -6,4 +6,5 @@ export interface AuthClient {
   onAuthStateChanged(callback: CallbackAuthChanged): void;
   signInGithub(): Promise<UserCredentials>;
   signOut(): Promise<void>;
+  getUser(): Promise<User | null>
 }

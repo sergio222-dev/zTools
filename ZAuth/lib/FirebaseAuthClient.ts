@@ -25,4 +25,8 @@ export class FirebaseAuthClient implements AuthClient {
   async signOut() {
     await this.authClient.signOut();
   }
+
+  async getUser() {
+    return this.authClient.currentUser;
+  }
 }

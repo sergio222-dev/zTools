@@ -2,17 +2,14 @@
   "name": "zauth-utility-module",
   "description": "Authentication module utility for multiple front-end applications in ES module",
   "private": false,
-  "version": "0.0.11",
+  "version": "0.0.12",
   "type": "module",
   "types": "./dist/types/main.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:types": "tsc --build",
-    "build:publish:patch": "vite build && tsc --build && npm version patch && npm publish",
-    "build:publish:minor": "vite build && tsc --build && npm version minor && npm publish",
-    "build:publish:major": "vite build && tsc --build && npm version major && npm publish"
+    "build:types": "tsc --build"
   },
   "files": [
     "dist"
