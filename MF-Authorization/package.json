@@ -6,9 +6,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mui/material": "^5.10.13"
   },
   "devDependencies": {
+    "@mui/material": "^5.10.13",
     "@babel/core": "^7.20.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
