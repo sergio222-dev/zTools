@@ -8,6 +8,22 @@ import {
 import microfrontendLayout from "./microfrontend-layout.html?raw";
 import { FirebaseAuthClient, AuthService } from "zauth-utility-module";
 
+// initialize the SPA
+const routes = constructRoutes(microfrontendLayout);
+const applications = constructApplications({
+  routes,
+  loadApp: ({ name }) =>
+    import(
+      /* @vite-ignore */
+      // @ts-ignore
+      name
+      )
+});
+const layoutEngine = constructLayoutEngine({ routes, applications });
+
+applications.forEach(registerApplication);
+layoutEngine.activate();
+
 // Authorization initialization
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_MF_FIREBASE_API_KEY,
@@ -26,8 +42,6 @@ instance.setClient(authClient);
 
 authClient.onAuthStateChanged((user) => {
   // TODO route should be in a config
-  if (!user && window.location.pathname === "/login") return;
-  if (user && window.location.pathname !== "/login") return;
   if (user && window.location.pathname === "/login") {
     const origin = window.location.origin;
     window.location.replace(origin + "/");
@@ -37,21 +51,6 @@ authClient.onAuthStateChanged((user) => {
     window.location.replace(origin + "/login");
   }
 
-  // initialize the SPA
-  const routes = constructRoutes(microfrontendLayout);
-  const applications = constructApplications({
-    routes,
-    loadApp: ({ name }) =>
-      import(
-        /* @vite-ignore */
-        // @ts-ignore
-        name
-        )
-  });
-  const layoutEngine = constructLayoutEngine({ routes, applications });
-
-  applications.forEach(registerApplication);
-  layoutEngine.activate();
   start();
 });
 
