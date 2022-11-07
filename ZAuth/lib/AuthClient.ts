@@ -1,4 +1,4 @@
-type User = {};
+export type User = {};
 export type UserCredentials = {};
 export type CallbackAuthChanged = (user: User | null) => void;
 

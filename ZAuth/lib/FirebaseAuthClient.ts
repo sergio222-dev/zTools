@@ -1,6 +1,6 @@
 import {initializeApp, FirebaseOptions, FirebaseApp} from "firebase/app";
 import {Auth, getAuth, GithubAuthProvider, signInWithPopup} from "firebase/auth";
-import {AuthClient, CallbackAuthChanged, UserCredentials} from "./AuthClient";
+import {AuthClient, CallbackAuthChanged, User, UserCredentials} from "./AuthClient";
 
 export class FirebaseAuthClient implements AuthClient {
   private readonly client: FirebaseApp;
@@ -26,7 +26,7 @@ export class FirebaseAuthClient implements AuthClient {
     await this.authClient.signOut();
   }
 
-  async getUser() {
-    return this.authClient.currentUser;
+  getUser(): User {
+    return this.authClient.currentUser as User;
   }
 }

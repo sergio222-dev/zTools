@@ -24,7 +24,7 @@ specifiers:
   vite-plugin-ejs: ^1.5.0
   vite-plugin-handlebars: ^1.6.0
   vite-plugin-mkcert: ^1.10.1
-  zauth-utility-module: ^0.0.12
+  zauth-utility-module: ^0.0.13
 
 dependencies:
   '@abraham/reflection': 0.11.0
@@ -52,7 +52,7 @@ devDependencies:
   vite-plugin-ejs: 1.5.0
   vite-plugin-handlebars: 1.6.0
   vite-plugin-mkcert: 1.10.1_vite@3.2.2
-  zauth-utility-module: 0.0.12
+  zauth-utility-module: 0.0.13
 
 packages:
 
@@ -2902,7 +2902,7 @@ packages:
     dependencies:
       jszip: 3.10.1
       tmp: 0.2.1
-      ws: 8.10.0
+      ws: 8.11.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -3381,8 +3381,8 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /ws/8.10.0:
-    resolution: {integrity: sha512-+s49uSmZpvtAsd2h37vIPy1RBusaLawVe8of+GyEPsaJTCMpj/2v8NpeK1SHXjBlQ95lQTmQofOJnFiLoaN3yw==}
+  /ws/8.11.0:
+    resolution: {integrity: sha512-HPG3wQd9sNQoT9xHyNCXoDUa+Xw/VevmY9FoHyQ+g+rrMn4j6FB4np7Z0OhdTgjx6MgQLK7jwSy1YecU1+4Asg==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -3425,8 +3425,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /zauth-utility-module/0.0.12:
-    resolution: {integrity: sha512-NwoGKzylyQvKR2IJYBrbJC0PXB+1xQmeyAp8StBcw+Q9AYy5i2Iw4spCboRdFjOgDEtRK1joh+m5/57KZxwonw==}
+  /zauth-utility-module/0.0.13:
+    resolution: {integrity: sha512-EOdkcTVFX61KRXN/zkKGUkWwHA+XLfpf9tDwLfFQnmxyKh/NE62WLDIBIvd7PJjDfJUP4MxGx88mNj0VexO2Pw==}
     dependencies:
       firebase: 9.13.0
     transitivePeerDependencies:
