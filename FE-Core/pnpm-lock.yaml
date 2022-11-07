@@ -19,12 +19,12 @@ specifiers:
   single-spa-layout: ^1.6.0
   ts-config-single-spa: ^3.0.0
   typescript: ^4.8.4
-  vite: ^3.2.2
+  vite: ^3.2.3
   vite-plugin-dynamic-import: ^1.2.3
   vite-plugin-ejs: ^1.5.0
   vite-plugin-handlebars: ^1.6.0
   vite-plugin-mkcert: ^1.10.1
-  zauth-utility-module: ^0.0.13
+  zauth-utility-module: ^0.0.14
 
 dependencies:
   '@abraham/reflection': 0.11.0
@@ -47,12 +47,12 @@ devDependencies:
   single-spa-layout: 1.6.0
   ts-config-single-spa: 3.0.0
   typescript: 4.8.4
-  vite: 3.2.2
+  vite: 3.2.3_@types+node@18.11.9
   vite-plugin-dynamic-import: 1.2.3
   vite-plugin-ejs: 1.5.0
   vite-plugin-handlebars: 1.6.0
-  vite-plugin-mkcert: 1.10.1_vite@3.2.2
-  zauth-utility-module: 0.0.13
+  vite-plugin-mkcert: 1.10.1_vite@3.2.3
+  zauth-utility-module: 0.0.14
 
 packages:
 
@@ -3242,7 +3242,7 @@ packages:
       - stylus
     dev: true
 
-  /vite-plugin-mkcert/1.10.1_vite@3.2.2:
+  /vite-plugin-mkcert/1.10.1_vite@3.2.3:
     resolution: {integrity: sha512-fNNC0z+AcBZExKedjWC7bWlDMf4+WZJqO/4aYf7C/vYY1dqYVOM+zowwTYV0xSx5ZQgplfangPkZk+RwdUlpBg==}
     engines: {node: '>=v16.0.0'}
     peerDependencies:
@@ -3252,7 +3252,7 @@ packages:
       axios: 0.21.4_debug@4.3.4
       debug: 4.3.4
       picocolors: 1.0.0
-      vite: 3.2.2
+      vite: 3.2.3_@types+node@18.11.9
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -3282,17 +3282,20 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite/3.2.2:
-    resolution: {integrity: sha512-pLrhatFFOWO9kS19bQ658CnRYzv0WLbsPih6R+iFeEEhDOuYgYCX2rztUViMz/uy/V8cLCJvLFeiOK7RJEzHcw==}
+  /vite/3.2.3_@types+node@18.11.9:
+    resolution: {integrity: sha512-h8jl1TZ76eGs3o2dIBSsvXDLb1m/Ec1iej8ZMdz+PsaFUsftZeWe2CZOI3qogEsMNaywc17gu0q6cQDzh/weCQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
+      '@types/node': '>= 14'
       less: '*'
       sass: '*'
       stylus: '*'
       sugarss: '*'
       terser: ^5.4.0
     peerDependenciesMeta:
+      '@types/node':
+        optional: true
       less:
         optional: true
       sass:
@@ -3304,6 +3307,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.11.9
       esbuild: 0.15.13
       postcss: 8.4.18
       resolve: 1.22.1
@@ -3425,8 +3429,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /zauth-utility-module/0.0.13:
-    resolution: {integrity: sha512-EOdkcTVFX61KRXN/zkKGUkWwHA+XLfpf9tDwLfFQnmxyKh/NE62WLDIBIvd7PJjDfJUP4MxGx88mNj0VexO2Pw==}
+  /zauth-utility-module/0.0.14:
+    resolution: {integrity: sha512-pB2lBq3yJ+Dd/YIwcrk0x00bzQm5lF7f6GESVzbKp7QzSinU3+mjt3X6VQR5vtIiKm3FE3ggOmd5ypWWkshaAQ==}
     dependencies:
       firebase: 9.13.0
     transitivePeerDependencies:
