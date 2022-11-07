@@ -28,7 +28,7 @@ jobs:
       - name: 'Install deps'
         run: pnpm i
       - name: 'Build'
-        run: pnpm build && pnpm build:types
+        run: pnpm build:publish
       - name: 'Set authToken token'
         run: npm config set _authToken=$NPM_TOKEN
       - name: 'Publish'
