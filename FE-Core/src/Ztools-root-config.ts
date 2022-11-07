@@ -20,43 +20,9 @@ const firebaseConfig = {
 
 const authClient = new FirebaseAuthClient(firebaseConfig);
 
-authClient.getUser()
-  .then(user => {
-    // redirect on not login
-    if (!user && window.location.pathname !== '/login') {
-      // TODO route should be in a config
-      console.log("user", user)
-      const origin = window.location.origin;
-      // window.location.replace(origin + "/login");
-    }
-
-    // redirect on login
-    if (user && window.location.pathname === "/login") {
-      const origin = window.location.origin;
-      window.location.replace(origin + "/");
-    }
-  });
-
 // share the client between all instance
 const instance = AuthService.getInstance();
 instance.setClient(authClient);
-
-
-const routes = constructRoutes(microfrontendLayout);
-const applications = constructApplications({
-  routes,
-  loadApp: ({ name }) =>
-    import(
-      /* @vite-ignore */
-      // @ts-ignore
-      name
-      )
-});
-const layoutEngine = constructLayoutEngine({ routes, applications });
-
-applications.forEach(registerApplication);
-layoutEngine.activate();
-start();
 
 authClient.onAuthStateChanged((user) => {
   // TODO route should be in a config
@@ -70,5 +36,22 @@ authClient.onAuthStateChanged((user) => {
     const origin = window.location.origin;
     window.location.replace(origin + "/login");
   }
+
+  // initialize the SPA
+  const routes = constructRoutes(microfrontendLayout);
+  const applications = constructApplications({
+    routes,
+    loadApp: ({ name }) =>
+      import(
+        /* @vite-ignore */
+        // @ts-ignore
+        name
+        )
+  });
+  const layoutEngine = constructLayoutEngine({ routes, applications });
+
+  applications.forEach(registerApplication);
+  layoutEngine.activate();
+  start();
 });
 
