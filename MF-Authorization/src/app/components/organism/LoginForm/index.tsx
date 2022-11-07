@@ -9,7 +9,7 @@ const LoginForm: React.FC = () => {
 
   const [authClient] = useAuthHook();
 
-  const handlerTest = (e: React.FormEvent) => {
+  const handleLoginWithGithub = (e: React.FormEvent) => {
     e.preventDefault();
     authClient.signInGithub();
   };
@@ -30,9 +30,8 @@ const LoginForm: React.FC = () => {
               width: 400,
             }}
           >
-            <Github onClick={handlerTest} />
+            <Github onClick={handleLoginWithGithub} />
           </Box>
-          {/*<Button onClick={handleLogOut}>SignOut</Button>*/}
         </Paper>
       </Box>
     </div>

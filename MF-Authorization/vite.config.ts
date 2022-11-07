@@ -25,8 +25,9 @@ export default defineConfig(({ mode }) => {
     },
     preview: {
       port: 3001,
+      https: true,
     },
-    base: publicAssetsBaseUrl,
+    // base: publicAssetsBaseUrl,
     // rollupOptions: {
     //   input: 'vite-single-spa-react.ts',
     //   format: 'system',
