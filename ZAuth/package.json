@@ -2,14 +2,17 @@
   "name": "zauth-utility-module",
   "description": "Authentication module utility for multiple front-end applications in ES module",
   "private": false,
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "types": "./dist/types/main.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:types": "tsc --build"
+    "build:types": "tsc --build",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "webstorm-integration": "vitest --watch --reporter=dot --reporter=json --outputFile=.vitest-result.json"
   },
   "files": [
     "dist"
@@ -28,6 +31,7 @@
     "typescript": "^4.8.4",
     "vite": "^3.2.2",
     "vite-plugin-dynamic-import": "^1.2.3",
+    "vitest": "^0.24.5",
     "yalc": "1.0.0-pre.53"
   },
   "packageManager": "^pnpm@7.14.2"

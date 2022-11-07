@@ -34,7 +34,7 @@ specifiers:
   vite: ^3.2.2
   vite-plugin-dynamic-import: ^1.2.3
   vite-plugin-mkcert: ^1.10.1
-  zauth-utility-module: ^0.0.8
+  zauth-utility-module: ^0.0.12
 
 dependencies:
   '@mui/material': 5.10.12_gs4twfomdgooimayvnfrqgiwam
@@ -72,7 +72,7 @@ devDependencies:
   vite: 3.2.2_sass@1.55.0
   vite-plugin-dynamic-import: 1.2.3
   vite-plugin-mkcert: 1.10.1_vite@3.2.2
-  zauth-utility-module: 0.0.8
+  zauth-utility-module: 0.0.12
 
 packages:
 
@@ -4241,8 +4241,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /zauth-utility-module/0.0.8:
-    resolution: {integrity: sha512-zvig/hlvsIHPc16F2gE9HYJzmZQaC/DkaoOh0a5wSF7uxuQwLPbxE2LyIWcOhjBN1FzNHUy/zvQ8xRhOOy7/Yw==}
+  /zauth-utility-module/0.0.12:
+    resolution: {integrity: sha512-NwoGKzylyQvKR2IJYBrbJC0PXB+1xQmeyAp8StBcw+Q9AYy5i2Iw4spCboRdFjOgDEtRK1joh+m5/57KZxwonw==}
     dependencies:
       firebase: 9.13.0
     transitivePeerDependencies:
