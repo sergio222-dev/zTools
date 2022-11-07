@@ -26,7 +26,14 @@ export class FirebaseAuthClient implements AuthClient {
     await this.authClient.signOut();
   }
 
+  /**
+   * @description Get user, have to wait to load
+   */
   getUser(): User {
     return this.authClient.currentUser as User;
+  }
+
+  getAuth(): Auth {
+    return this.authClient;
   }
 }

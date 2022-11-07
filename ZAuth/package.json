@@ -10,6 +10,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "build:types": "tsc --build",
+    "build:publish": "vite build && tsc --build",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "webstorm-integration": "vitest --watch --reporter=dot --reporter=json --outputFile=.vitest-result.json"
