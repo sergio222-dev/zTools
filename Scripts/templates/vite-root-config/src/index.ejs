@@ -48,8 +48,6 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@latest/lib/esm/single-spa.dev.js",
         "react": "https://esm.sh/react@latest",
-        "@emotion/styled": "https://esm.sh/@emotion/styled@latest",
-        "@emotion/react": "https://esm.sh/@emotion/react@latest",
         "react-dom": "https://esm.sh/react-dom@latest",
         "single-spa-react": "https://cdn.jsdelivr.net/npm/single-spa-react@latest/lib/esm/single-spa-react.js",
         "zauth-utility-module": "https://cdn.jsdelivr.net/npm/zauth-utility-module@latest/dist/zauth.js"
@@ -77,7 +75,6 @@
       {
         "imports": {
           "@Ztools/root-config": "https://localhost:9000/root-config.ts",
-          "@Ztools/MF-Authorization": "https://localhost:3001/Ztools-mf-authorization.ts"
         }
       }
   </script>
@@ -86,11 +83,11 @@
       {
         "imports": {
           "@Ztools/root-config": "//localhost:9000/Ztools-root-config.js",
-          "@Ztools/MF-Authorization": "<%= VITE_MF_LOGIN_PROD %>/Ztools-mf-authorization.js"
         }
       }
   </script>
-    <link rel="preload" href="<%= VITE_MF_LOGIN_PROD %>/assets/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- TODO need this for load assets -->
+<!--    <link rel="preload" href="<%= VITE_MF_LOGIN_PROD %>/assets/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">-->
 <!--    <noscript><link rel="stylesheet" href="<%# VITE_MF_REACT_PROD_DOMAIN %>/assets/style.css"></noscript>-->
   <% } %>
   <!--
