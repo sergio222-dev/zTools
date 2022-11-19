@@ -5,10 +5,8 @@ import mkcert from "vite-plugin-mkcert";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 
 const path = require("path");
-// const { parsed } = require('dotenv').config({
-//   path: path.resolve(__dirname, './src/.env'),
-// })
 
+// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const publicAssetsBaseUrl = mode === "production" ? process.env.VITE_MF_LOGIN_PROD + "/" : "http://localhost:3001/";
 
@@ -22,16 +20,14 @@ export default defineConfig(({ mode }) => {
       port: 3001,
       https: true,
     },
-    // base: publicAssetsBaseUrl,
-    // rollupOptions: {
-    //   input: 'vite-single-spa-react.ts',
-    //   format: 'system',
-    //   preserveEntrySignatures: true,
-    // },
     resolve: {
       alias: {
         "@organism": path.resolve(__dirname, "./src/app/components/organism"),
+        "@atom": path.resolve(__dirname, "./src/app/components/atom"),
+        "@molecule": path.resolve(__dirname, "./src/app/components/molecule"),
         "@styles": path.resolve(__dirname, "./src/app/styles"),
+        "@core": path.resolve(__dirname, "./src/core"),
+        "@app": path.resolve(__dirname, "./src/app"),
       },
     },
     build: {
@@ -41,41 +37,24 @@ export default defineConfig(({ mode }) => {
       manifest: true,
       rollupOptions: {
         input: {
-          "ztools-mf-authorization": "./src/Ztools-mf-authorization.ts",
+          "mf-vite-react": "./src/mf-vite-react.ts",
         },
         preserveEntrySignatures: "strict",
         output: {
-          // name: "ztools-mf-authorization",
-          // format: "umd",
-          // globals: {
-          //   react: "React",
-          //   "react-dom": "react-dom",
-          //   "single-spa-react": "singleSpaReact",
-          // },
           entryFileNames: "[name].js",
-          assetFileNames: "assets/[name].[ext]",
+          assetFileNames: "assets/[hash].[ext]",
           globals: {
             Reflect: "reflect-metadata",
           },
-          // preserveModules: true,
         },
         plugins: [
-          // enable tree shaking
-          nodeResolve(),
+          nodeResolve(), // enable tree shaking apparently
         ],
-        external: [
-          "single-spa-react",
-          "react",
-          "react-dom",
-          "@emotion/react",
-          "@emotion/styled",
-          "zauth-utility-module",
-        ],
+        external: ["single-spa-react", "react", "react-dom"],
       },
     },
     plugins: [
-      reactRefresh(),
-      // react(),
+      reactRefresh(), // new one is not working, TODO fix this
       dynamicImport(),
       // Create and install CERT for dev env, enable to use https
       // https://github.com/liuweiGL/vite-plugin-mkcert

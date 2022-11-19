@@ -1,0 +1,32 @@
+name: 'publish-zscripts'
+run-name: action triggered by @${{ github.actor }}
+
+on:
+  pull_request_target:
+    types: [closed]
+    branches:
+      - 'main'
+    paths:
+      - 'Scripts/package.json'
+
+jobs:
+  publish-zscripts:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.ACCESS_TOKEN_ZSCRIPTS_MODULE }}
+    defaults:
+      run:
+        working-directory: './Scripts'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.11.0
+      - name: 'Set authToken token'
+        run: npm config set _authToken=$NPM_TOKEN
+      - name: 'Publish'
+        run: npm publish
+      - name: 'Remove authToken token'
+        if: ${{ always() }}
+        run: npm config delete _authToken
