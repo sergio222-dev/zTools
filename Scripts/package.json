@@ -1,6 +1,6 @@
 {
   "name": "@sanson222/ztemplates",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Collection of script to make micro front end more easily",
   "main": "index.js",
   "scripts": {},
@@ -10,7 +10,7 @@
   "bin": {
     "zscripts": "./index.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "cross-spawn": "^7.0.3",
     "yargs": "^17.6.2"
   }
