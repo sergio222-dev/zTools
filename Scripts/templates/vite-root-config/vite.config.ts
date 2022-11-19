@@ -5,19 +5,12 @@ import handlebars from "vite-plugin-handlebars";
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import mkcert from'vite-plugin-mkcert';
 
-const path = require("path");
-
-const { parsed } = require("dotenv").config({
-  path: path.resolve(__dirname, "./src/.env")
-});
-
-
 // @ts-ignore
 export default defineConfig(() => {
   return {
     root: "./src",
     rollupOptions: {
-      input: "ztools-root-config.ts",
+      input: "Ztools-vite-root-config.ts",
       preserveEntrySignatures: "strict"
     },
     server: {
@@ -34,7 +27,7 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: "./src/index.ejs",
-          "ztools-root-config": "./src/ztools-root-config.ts"
+          "root-config": "./src/root-config.ts"
         },
         preserveEntrySignatures: "strict",
         output: {
@@ -51,10 +44,6 @@ export default defineConfig(() => {
         ]
       }
     },
-    // resolve: {
-    //   fullySpecified: false,
-    //   modules: ["node_modules"]
-    // },
     define: {
       define: "undefined",
       "global.TYPED_ARRAY_SUPPORT": undefined

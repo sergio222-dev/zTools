@@ -1,0 +1,42 @@
+{
+  "name": "@ztools/root-config",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prettier": "prettier --write",
+    "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@abraham/reflection": "^0.11.0",
+    "single-spa": "^5.9.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "eslint": "^8.28.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unicorn": "^44.0.2",
+    "eslint-plugin-eslint-comments": "^3.1.2",
+    "eslint-plugin-sonarjs": "^0.16.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.7.1",
+    "reflect-metadata": "^0.1.13",
+    "single-spa-layout": "^1.6.0",
+    "ts-config-single-spa": "^3.0.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.3",
+    "vite-plugin-dynamic-import": "^1.2.3",
+    "vite-plugin-ejs": "^1.5.0",
+    "vite-plugin-handlebars": "^1.6.0",
+    "vite-plugin-mkcert": "^1.10.1",
+    "zauth-utility-module": "^0.0.14"
+  },
+  "types": "dist/Ztools-root-config.d.ts"
+}
