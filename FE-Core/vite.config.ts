@@ -17,7 +17,7 @@ export default defineConfig(() => {
   return {
     root: "./src",
     rollupOptions: {
-      input: "Ztools-vite-root-config.ts",
+      input: "ztools-root-config.ts",
       preserveEntrySignatures: "strict"
     },
     server: {
@@ -34,7 +34,7 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: "./src/index.ejs",
-          "ztools-root-config": "./src/Ztools-vite-root-config.ts"
+          "ztools-root-config": "./src/ztools-root-config.ts"
         },
         preserveEntrySignatures: "strict",
         output: {
