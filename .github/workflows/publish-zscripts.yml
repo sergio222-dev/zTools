@@ -26,7 +26,7 @@ jobs:
       - name: 'Set authToken token'
         run: npm config set _authToken=$NPM_TOKEN
       - name: 'Publish'
-        run: npm publish
+        run: npm publish --access=public
       - name: 'Remove authToken token'
         if: ${{ always() }}
         run: npm config delete _authToken
