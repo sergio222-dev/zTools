@@ -1,5 +1,5 @@
 {
-  "name": "ztemplates",
+  "name": "@sanson222/ztemplates",
   "version": "1.0.0",
   "description": "Collection of script to make micro front end more easily",
   "main": "index.js",
