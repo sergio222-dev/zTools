@@ -28,9 +28,8 @@
       "es2016.array.include",
       "es2018",
       "esnext"
-    ],
+    ]
   },
-//  "include": ["src"],
+  //  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
-
