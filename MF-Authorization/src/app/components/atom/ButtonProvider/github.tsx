@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 import { Button, ButtonProps } from "@mui/material";
 import { AiOutlineGithub } from "react-icons/ai";
 import styles from "./styles.module.scss";

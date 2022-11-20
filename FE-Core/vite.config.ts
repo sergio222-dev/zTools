@@ -50,7 +50,7 @@ export default defineConfig(() => {
       "global.TYPED_ARRAY_SUPPORT": undefined,
     },
     plugins: [
-      ViteEjsPlugin((config) => ({
+      ViteEjsPlugin(config => ({
         isLocal: config.mode === "development",
         ...process.env,
       })),
