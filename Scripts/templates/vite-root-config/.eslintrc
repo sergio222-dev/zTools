@@ -1,6 +1,5 @@
 {
   "extends": [
-    "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:@typescript-eslint/recommended",
@@ -8,10 +7,14 @@
     "plugin:import/typescript",
     "plugin:unicorn/recommended",
     "plugin:eslint-comments/recommended",
-    "prettier"
+    "prettier",
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint"
-  ]
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }

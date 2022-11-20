@@ -8,4 +8,4 @@ export const BuildContainer = () => {
   BindAuth(container);
 
   return container;
-}
+};

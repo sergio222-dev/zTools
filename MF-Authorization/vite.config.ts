@@ -1,16 +1,15 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
+// import react from "@vitejs/plugin-react";
 import dynamicImport from "vite-plugin-dynamic-import";
 import mkcert from "vite-plugin-mkcert";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
-// const { parsed } = require('dotenv').config({
-//   path: path.resolve(__dirname, './src/.env'),
-// })
 
-export default defineConfig(({ mode }) => {
-  const publicAssetsBaseUrl = mode === "production" ? process.env.VITE_MF_LOGIN_PROD + "/" : "http://localhost:3001/";
+export default defineConfig(() => {
+  // const publicAssetsBaseUrl = mode === "production" ? process.env.VITE_MF_LOGIN_PROD + "/" : "http://localhost:3001/";
 
   return {
     root: "./src",
@@ -22,12 +21,6 @@ export default defineConfig(({ mode }) => {
       port: 3001,
       https: true,
     },
-    // base: publicAssetsBaseUrl,
-    // rollupOptions: {
-    //   input: 'vite-single-spa-react.ts',
-    //   format: 'system',
-    //   preserveEntrySignatures: true,
-    // },
     resolve: {
       alias: {
         "@organism": path.resolve(__dirname, "./src/app/components/organism"),
@@ -41,23 +34,15 @@ export default defineConfig(({ mode }) => {
       manifest: true,
       rollupOptions: {
         input: {
-          "ztools-mf-authorization": "./src/Ztools-mf-authorization.ts",
+          "ztools-mf-authorization": "./src/ztools-mf-authorization.ts",
         },
         preserveEntrySignatures: "strict",
         output: {
-          // name: "ztools-mf-authorization",
-          // format: "umd",
-          // globals: {
-          //   react: "React",
-          //   "react-dom": "react-dom",
-          //   "single-spa-react": "singleSpaReact",
-          // },
           entryFileNames: "[name].js",
           assetFileNames: "assets/[name].[ext]",
           globals: {
             Reflect: "reflect-metadata",
           },
-          // preserveModules: true,
         },
         plugins: [
           // enable tree shaking
