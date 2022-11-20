@@ -4,36 +4,36 @@ declare module "*.html" {
 }
 
 declare module "*.bmp" {
-  const src: string;
-  export default src;
+  const source: string;
+  export default source;
 }
 
 declare module "*.gif" {
-  const src: string;
-  export default src;
+  const source: string;
+  export default source;
 }
 
 declare module "*.jpg" {
-  const src: string;
-  export default src;
+  const source: string;
+  export default source;
 }
 
 declare module "*.jpeg" {
-  const src: string;
-  export default src;
+  const source: string;
+  export default source;
 }
 
 declare module "*.png" {
-  const src: string;
-  export default src;
+  const source: string;
+  export default source;
 }
 
 declare module "*.webp" {
-  const src: string;
-  export default src;
+  const source: string;
+  export default source;
 }
 
 declare module "*.svg" {
-  const src: string;
-  export default src;
+  const source: string;
+  export default source;
 }

@@ -1,14 +1,15 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from "react";
 import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 import LoginForm from "@organism/LoginForm";
 import "@styles/app.scss";
 
-import {BuildContainer} from "./core/shared/infrastructure/DI/container";
-import {ContainerContext} from "./app/context/container.context";
+import { BuildContainer } from "./core/shared/infrastructure/DI/container";
+import { ContainerContext } from "./app/context/container.context";
 
 const container = BuildContainer();
 
-export default function Root(props: any) {
+export default function Root() {
   // Set tittle app
   document.title = "Ztools login form";
 
@@ -16,9 +17,8 @@ export default function Root(props: any) {
     <StyledEngineProvider injectFirst>
       {/*https://github.com/mui/material-ui/issues/24109*/}
       <ContainerContext.Provider value={container}>
-        <LoginForm/>
+        <LoginForm />
       </ContainerContext.Provider>
     </StyledEngineProvider>
-  )
-    ;
+  );
 }

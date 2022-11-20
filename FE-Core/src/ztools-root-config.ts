@@ -3,8 +3,9 @@ import { registerApplication, start } from "single-spa";
 import {
   constructApplications,
   constructRoutes,
-  constructLayoutEngine
+  constructLayoutEngine,
 } from "single-spa-layout";
+// eslint-disable-next-line import/no-unresolved
 import microfrontendLayout from "./microfrontend-layout.html?raw";
 import { FirebaseAuthClient, AuthService } from "zauth-utility-module";
 
@@ -15,13 +16,16 @@ const applications = constructApplications({
   loadApp: ({ name }) =>
     import(
       /* @vite-ignore */
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       name
-      )
+    ),
 });
 const layoutEngine = constructLayoutEngine({ routes, applications });
 
-applications.forEach(registerApplication);
+for (const element of applications) {
+  registerApplication(element);
+}
 layoutEngine.activate();
 
 // Authorization initialization
@@ -31,7 +35,7 @@ const firebaseConfig = {
   projectId: import.meta.env.VITE_MF_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.VITE_MF_FIREBASE_STORAGEBUCKET,
   messagingSenderId: import.meta.env.VITE_MF_FIREBASE_MESSAGINGSENDERID,
-  appId: import.meta.env.VITE_MF_FIREBASE_APP_ID
+  appId: import.meta.env.VITE_MF_FIREBASE_APP_ID,
 };
 
 const authClient = new FirebaseAuthClient(firebaseConfig);
@@ -53,4 +57,3 @@ authClient.onAuthStateChanged((user) => {
 
   start();
 });
-

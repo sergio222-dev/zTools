@@ -2,23 +2,17 @@ import { defineConfig } from "vite";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import dynamicImport from "vite-plugin-dynamic-import";
 import handlebars from "vite-plugin-handlebars";
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import mkcert from'vite-plugin-mkcert';
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+import mkcert from "vite-plugin-mkcert";
 
-const path = require("path");
-
-const { parsed } = require("dotenv").config({
-  path: path.resolve(__dirname, "./src/.env")
-});
-
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 export default defineConfig(() => {
   return {
     root: "./src",
     rollupOptions: {
       input: "ztools-root-config.ts",
-      preserveEntrySignatures: "strict"
+      preserveEntrySignatures: "strict",
     },
     server: {
       port: 9000,
@@ -33,8 +27,8 @@ export default defineConfig(() => {
       cssCodeSplit: false,
       rollupOptions: {
         input: {
-          main: "./src/index.ejs",
-          "ztools-root-config": "./src/ztools-root-config.ts"
+          main: "./src/index.html",
+          "ztools-root-config": "./src/ztools-root-config.ts",
         },
         preserveEntrySignatures: "strict",
         output: {
@@ -47,26 +41,22 @@ export default defineConfig(() => {
         external: ["single-spa", "zauth-utility-module"],
         plugins: [
           // enable tree shaking
-          nodeResolve()
-        ]
-      }
+          nodeResolve(),
+        ],
+      },
     },
-    // resolve: {
-    //   fullySpecified: false,
-    //   modules: ["node_modules"]
-    // },
     define: {
       define: "undefined",
-      "global.TYPED_ARRAY_SUPPORT": undefined
+      "global.TYPED_ARRAY_SUPPORT": undefined,
     },
     plugins: [
       ViteEjsPlugin(config => ({
         isLocal: config.mode === "development",
-        ...process.env
+        ...process.env,
       })),
       handlebars(),
       dynamicImport(),
       mkcert(),
-    ]
+    ],
   };
 });

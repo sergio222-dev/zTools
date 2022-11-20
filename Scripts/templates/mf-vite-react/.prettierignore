@@ -1,9 +1,12 @@
-.gitignore
-.prettierignore
 yarn.lock
 yarn-error.log
 package-lock.json
+LICENSE
+*.ejs
 dist
 coverage
 node_modules
 pnpm-lock.yaml
+.yalc
+.netlify
+.husky

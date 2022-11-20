@@ -23,9 +23,9 @@
     "emitDecoratorMetadata": true,
     "paths": {
       "@organism/*": ["app/components/organism/*"],
-      "@styles/*": ["app/styles/*"],
+      "@styles/*": ["app/styles/*"]
     }
   },
-  "include": ["src"],
-//  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"]
+  //  "references": [{ "path": "./tsconfig.node.json" }]
 }

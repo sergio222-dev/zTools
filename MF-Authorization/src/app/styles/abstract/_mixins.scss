@@ -7,9 +7,9 @@
   $max: breakpoint-max($name, $breakpoints);
   @if $max {
     @media (max-width: $max) {
-      @content
+      @content;
     }
   } @else {
-    @content
+    @content;
   }
 }

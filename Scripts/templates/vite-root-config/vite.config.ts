@@ -26,7 +26,7 @@ export default defineConfig(() => {
       cssCodeSplit: false,
       rollupOptions: {
         input: {
-          main: "./src/index.ejs",
+          main: "./src/index.html",
           "root-config": "./src/root-config.ts"
         },
         preserveEntrySignatures: "strict",

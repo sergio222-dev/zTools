@@ -1,6 +1,6 @@
-import {createContext, useContext} from "react";
-import {Container} from "inversify";
+import { createContext, useContext } from "react";
+import { Container } from "inversify";
 
-export const ContainerContext = createContext<Container | null>(null);
+export const ContainerContext = createContext<Container | undefined>(undefined);
 
-export const useContainer = () => useContext<Container | null>(ContainerContext);
+export const useContainer = () => useContext<Container | undefined>(ContainerContext);

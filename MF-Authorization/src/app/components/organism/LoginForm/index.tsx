@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
-import {Paper, useTheme, Box} from "@mui/material";
+import React from "react";
+import { Paper, useTheme, Box } from "@mui/material";
 import styles from "./LoginForm.module.scss";
-import {Github} from "../../atom/ButtonProvider";
-import useAuthHook from "../../../../core/auth/presentation/useAuth.hook";
+import { Github } from "../../atom/ButtonProvider";
+import useAuthHook from "../../../../core/auth/presentation/use-auth.hook";
 
 const LoginForm: React.FC = () => {
   const theme = useTheme();
 
   const [authClient] = useAuthHook();
 
-  const handleLoginWithGithub = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleLoginWithGithub = (event: React.FormEvent) => {
+    event.preventDefault();
     authClient.signInGithub();
   };
 

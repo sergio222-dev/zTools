@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
-
-pnpm exec prettier && pnpm lint
+cd MF-Authorization
+pnpm prettier && pnpm lint
