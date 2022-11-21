@@ -8,7 +8,12 @@ type GithubButtonProperties = ButtonProps;
 
 const Github = ({ ...rest }: GithubButtonProperties) => {
   return (
-    <Button fullWidth {...rest} className={`${styles["github-provider-button"]}`} startIcon={<AiOutlineGithub />}>
+    <Button
+      fullWidth
+      {...rest}
+      className={`${styles["github-provider-button"]}`}
+      startIcon={<AiOutlineGithub />}
+    >
       Github
     </Button>
   );

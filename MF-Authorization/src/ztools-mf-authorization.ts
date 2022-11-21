@@ -15,7 +15,11 @@ const lifecycles = singleSpaReact({
     console.log(info);
     console.log(properties);
     console.log("====================================");
-    return React.createElement("div", {}, "Error loading Login Micro Frontend 💀💀💀");
+    return React.createElement(
+      "div",
+      {},
+      "Error loading Login Micro Frontend 💀💀💀",
+    );
   },
 });
 

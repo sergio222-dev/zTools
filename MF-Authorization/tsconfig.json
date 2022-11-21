@@ -23,6 +23,10 @@
     "emitDecoratorMetadata": true,
     "paths": {
       "@organism/*": ["app/components/organism/*"],
+      "@atom/*": ["app/components/atom/*"],
+      "@molecule/*": ["app/components/molecule/*"],
+      "@app/*": ["app/*"],
+      "@core/*": ["core/*"],
       "@styles/*": ["app/styles/*"]
     }
   },

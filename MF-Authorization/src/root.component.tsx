@@ -4,7 +4,7 @@ import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 import LoginForm from "@organism/LoginForm";
 import "@styles/app.scss";
 
-import { BuildContainer } from "./core/shared/infrastructure/DI/container";
+import { BuildContainer } from "@core/shared/infrastructure/DI/container";
 import { ContainerContext } from "./app/context/container.context";
 
 const container = BuildContainer();
