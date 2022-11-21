@@ -22,12 +22,30 @@ export default defineConfig(() => {
     },
     resolve: {
       alias: {
-        "@organism": path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "./src/app/components/organism"),
-        "@atom": path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "./src/app/components/atom"),
-        "@molecule": path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "./src/app/components/molecule"),
-        "@core": path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "./src/core"),
-        "@app": path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "./src/app"),
-        "@styles": path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "./src/app/styles"),
+        "@organism": path.resolve(
+          path.dirname(url.fileURLToPath(import.meta.url)),
+          "./src/app/components/organism",
+        ),
+        "@atom": path.resolve(
+          path.dirname(url.fileURLToPath(import.meta.url)),
+          "./src/app/components/atom",
+        ),
+        "@molecule": path.resolve(
+          path.dirname(url.fileURLToPath(import.meta.url)),
+          "./src/app/components/molecule",
+        ),
+        "@core": path.resolve(
+          path.dirname(url.fileURLToPath(import.meta.url)),
+          "./src/core",
+        ),
+        "@app": path.resolve(
+          path.dirname(url.fileURLToPath(import.meta.url)),
+          "./src/app",
+        ),
+        "@styles": path.resolve(
+          path.dirname(url.fileURLToPath(import.meta.url)),
+          "./src/app/styles",
+        ),
       },
     },
     build: {

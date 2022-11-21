@@ -5,5 +5,5 @@ module.exports = {
   semi: true,
   trailingComma: "all",
   jsxSingleQuote: true,
-  endOfLine: "lf"
+  endOfLine: "lf",
 };

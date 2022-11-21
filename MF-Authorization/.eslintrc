@@ -27,8 +27,8 @@
 
         // Choose from one of the "project" configs below or omit to use <root>/tsconfig.json by default
 
-//         use <root>/path/to/folder/tsconfig.json
-                "project": "./tsconfig.json"
+        //         use <root>/path/to/folder/tsconfig.json
+        "project": "./tsconfig.json"
         // Multiple tsconfigs (Useful for monorepos)
 
         // use a glob pattern
