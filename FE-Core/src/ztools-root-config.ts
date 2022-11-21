@@ -44,7 +44,7 @@ const authClient = new FirebaseAuthClient(firebaseConfig);
 const instance = AuthService.getInstance();
 instance.setClient(authClient);
 
-authClient.onAuthStateChanged((user) => {
+authClient.onAuthStateChanged(user => {
   // TODO route should be in a config
   if (user && window.location.pathname === "/login") {
     const origin = window.location.origin;
