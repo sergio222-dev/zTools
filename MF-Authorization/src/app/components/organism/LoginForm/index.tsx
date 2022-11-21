@@ -1,8 +1,8 @@
 import React from "react";
 import { Paper, useTheme, Box } from "@mui/material";
 import styles from "./LoginForm.module.scss";
-import { Github } from "../../atom/ButtonProvider";
-import useAuthHook from "../../../../core/auth/presentation/use-auth.hook";
+import { Github } from "@atom/ButtonProvider";
+import useAuthHook from "@core/auth/presentation/use-auth.hook";
 
 const LoginForm: React.FC = () => {
   const theme = useTheme();
