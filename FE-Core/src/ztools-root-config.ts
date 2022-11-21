@@ -7,7 +7,7 @@ import {
 } from "single-spa-layout";
 // eslint-disable-next-line import/no-unresolved
 import microfrontendLayout from "./microfrontend-layout.html?raw";
-import { FirebaseAuthClient, AuthService } from "zauth-utility-module";
+import { FirebaseAuthClient, AuthService, AuthClient } from "zauth-utility-module";
 
 // initialize the SPA
 const routes = constructRoutes(microfrontendLayout);
@@ -38,7 +38,7 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_MF_FIREBASE_APP_ID,
 };
 
-const authClient = new FirebaseAuthClient(firebaseConfig);
+const authClient: AuthClient = new FirebaseAuthClient(firebaseConfig);
 
 // share the client between all instance
 const instance = AuthService.getInstance();
