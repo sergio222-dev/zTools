@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import dynamicImport from "vite-plugin-dynamic-import";
 import handlebars from "vite-plugin-handlebars";
+import viteConfigPath from "vite-plugin-tsconfig-paths"
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import mkcert from "vite-plugin-mkcert";
 
@@ -54,6 +55,7 @@ export default defineConfig(() => {
         isLocal: config.mode === "development",
         ...process.env,
       })),
+      viteConfigPath(),
       handlebars(),
       dynamicImport(),
       mkcert(),

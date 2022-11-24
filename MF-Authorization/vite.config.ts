@@ -4,8 +4,7 @@ import reactRefresh from "@vitejs/plugin-react-refresh";
 import dynamicImport from "vite-plugin-dynamic-import";
 import mkcert from "vite-plugin-mkcert";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import * as url from "node:url";
-import * as path from "node:path";
+import tsConfigPaths from "vite-plugin-tsconfig-paths";
 
 export default defineConfig(() => {
   // const publicAssetsBaseUrl = mode === "production" ? process.env.VITE_MF_LOGIN_PROD + "/" : "http://localhost:3001/";
@@ -19,34 +18,6 @@ export default defineConfig(() => {
     preview: {
       port: 3001,
       https: true,
-    },
-    resolve: {
-      alias: {
-        "@organism": path.resolve(
-          path.dirname(url.fileURLToPath(import.meta.url)),
-          "./src/app/components/organism",
-        ),
-        "@atom": path.resolve(
-          path.dirname(url.fileURLToPath(import.meta.url)),
-          "./src/app/components/atom",
-        ),
-        "@molecule": path.resolve(
-          path.dirname(url.fileURLToPath(import.meta.url)),
-          "./src/app/components/molecule",
-        ),
-        "@core": path.resolve(
-          path.dirname(url.fileURLToPath(import.meta.url)),
-          "./src/core",
-        ),
-        "@app": path.resolve(
-          path.dirname(url.fileURLToPath(import.meta.url)),
-          "./src/app",
-        ),
-        "@styles": path.resolve(
-          path.dirname(url.fileURLToPath(import.meta.url)),
-          "./src/app/styles",
-        ),
-      },
     },
     build: {
       outDir: "../dist",
@@ -82,6 +53,7 @@ export default defineConfig(() => {
     plugins: [
       reactRefresh(),
       // react(),
+      tsConfigPaths(),
       dynamicImport(),
       // Create and install CERT for dev env, enable to use https
       // https://github.com/liuweiGL/vite-plugin-mkcert
