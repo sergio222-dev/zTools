@@ -12,7 +12,7 @@
     "@babel/core": "^7.20.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.14",
+    "@mui/material": "^5.10.15",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
@@ -33,7 +33,7 @@
     "eslint-plugin-unicorn": "^44.0.2",
     "husky": "^8.0.2",
     "inversify": "^6.0.1",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
@@ -45,6 +45,7 @@
     "vite": "^3.2.4",
     "vite-plugin-dynamic-import": "^1.2.3",
     "vite-plugin-mkcert": "^1.10.1",
+    "vite-plugin-tsconfig-paths": "^1.2.0",
     "zauth-utility-module": "^0.0.15"
   },
   "husky": {

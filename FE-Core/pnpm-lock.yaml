@@ -30,6 +30,7 @@ specifiers:
   vite-plugin-ejs: ^1.6.4
   vite-plugin-handlebars: ^1.6.0
   vite-plugin-mkcert: ^1.10.1
+  vite-plugin-tsconfig-paths: ^1.2.0
   zauth-utility-module: ^0.0.15
 
 dependencies:
@@ -64,6 +65,7 @@ devDependencies:
   vite-plugin-ejs: 1.6.4
   vite-plugin-handlebars: 1.6.0
   vite-plugin-mkcert: 1.10.1_vite@3.2.4
+  vite-plugin-tsconfig-paths: 1.2.0_vf3nqk3ewnpqc5dulqzhw4xcru
   zauth-utility-module: 0.0.15
 
 packages:
@@ -4018,6 +4020,14 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /typescript-paths/1.4.0_typescript@4.9.3:
+    resolution: {integrity: sha512-olt3yKj5d4ON5MpQgxvqpiN24ApsrdlRnIQFwqlbzuTjRZFQNoTOzzTJ13vyDRt7VW0cuO+g8HA+eoYfBLWWMA==}
+    peerDependencies:
+      typescript: ^4.7.2
+    dependencies:
+      typescript: 4.9.3
+    dev: true
+
   /typescript/4.9.3:
     resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
     engines: {node: '>=4.2.0'}
@@ -4111,6 +4121,17 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: true
+
+  /vite-plugin-tsconfig-paths/1.2.0_vf3nqk3ewnpqc5dulqzhw4xcru:
+    resolution: {integrity: sha512-DpYiubYbrT3MzuJJ/DEavnbACiApoNM5RsH9HQHG5vDlTG4aRmKkwlw9gUFEeymCjvLTwmlScwtj0m02t3sgRQ==}
+    peerDependencies:
+      vite: '*'
+    dependencies:
+      typescript-paths: 1.4.0_typescript@4.9.3
+      vite: 3.2.4_@types+node@18.11.9
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /vite/2.9.15:

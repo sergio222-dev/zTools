@@ -9,9 +9,9 @@ const LoginForm: React.FC = () => {
 
   const [authClient] = useAuthHook();
 
-  const handleLoginWithGithub = (event: React.FormEvent) => {
+  const handleLoginWithGithub = async (event: React.FormEvent) => {
     event.preventDefault();
-    authClient.signInGithub();
+    await authClient.signInGithub();
   };
 
   return (

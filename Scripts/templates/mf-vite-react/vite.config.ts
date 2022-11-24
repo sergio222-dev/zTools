@@ -3,8 +3,7 @@ import reactRefresh from "@vitejs/plugin-react-refresh";
 import dynamicImport from "vite-plugin-dynamic-import";
 import mkcert from "vite-plugin-mkcert";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-
-const path = require("path");
+import tsConfigPaths from "vite-plugin-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -19,16 +18,6 @@ export default defineConfig(({ mode }) => {
     preview: {
       port: 3001,
       https: true,
-    },
-    resolve: {
-      alias: {
-        "@organism": path.resolve(__dirname, "./src/app/components/organism"),
-        "@atom": path.resolve(__dirname, "./src/app/components/atom"),
-        "@molecule": path.resolve(__dirname, "./src/app/components/molecule"),
-        "@styles": path.resolve(__dirname, "./src/app/styles"),
-        "@core": path.resolve(__dirname, "./src/core"),
-        "@app": path.resolve(__dirname, "./src/app"),
-      },
     },
     build: {
       outDir: "../dist",
@@ -55,6 +44,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       reactRefresh(), // new one is not working, TODO fix this
+      tsConfigPaths(),
       dynamicImport(),
       // Create and install CERT for dev env, enable to use https
       // https://github.com/liuweiGL/vite-plugin-mkcert

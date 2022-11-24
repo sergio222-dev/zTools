@@ -1,6 +1,5 @@
 import { Container } from "inversify";
 import { AuthService, AuthClient } from "zauth-utility-module";
-// TODO fix this
 import AuthTypes from "./auth.types";
 
 const BindAuth = (container: Container) => {
