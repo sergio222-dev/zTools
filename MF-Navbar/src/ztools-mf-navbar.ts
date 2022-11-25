@@ -18,7 +18,7 @@ const lifecycles = singleSpaReact({
     return createElement(
       "div",
       {},
-      "Error loading Login Micro Frontend 💀💀💀",
+      "Error loading Navbar Micro Frontend 💀💀💀",
     );
   },
 });
