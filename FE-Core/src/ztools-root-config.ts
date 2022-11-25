@@ -1,5 +1,5 @@
 import "@abraham/reflection";
-import { registerApplication, start } from "single-spa";
+import { registerApplication, start, navigateToUrl } from "single-spa";
 import {
   constructApplications,
   constructRoutes,
@@ -55,14 +55,10 @@ instance.setClient(authClient);
 authClient.onAuthStateChanged(user => {
   // TODO route should be in a config
   if (user && window.location.pathname === "/login") {
-    const origin = window.location.origin;
-    window.location.replace(origin + "/");
-    return;
+    navigateToUrl("/");
   }
   if (!user && window.location.pathname !== "/login") {
-    const origin = window.location.origin;
-    window.location.replace(origin + "/login");
-    return;
+    navigateToUrl("/login");
   }
 
   start();
