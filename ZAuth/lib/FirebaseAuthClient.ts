@@ -12,7 +12,18 @@ export class FirebaseAuthClient implements AuthClient {
   }
 
   onAuthStateChanged(callback: CallbackAuthChanged): void {
-    this.authClient.onAuthStateChanged((user) => {
+    this.authClient.onAuthStateChanged((firebaseUser) => {
+      if (!firebaseUser) {
+        callback(null);
+        return;
+      }
+
+      const user: User = {
+        avatar: firebaseUser.photoURL ?? '',
+        displayName: firebaseUser.displayName ?? '',
+        email: firebaseUser.email ?? '',
+      };
+
       callback(user);
     })
   }
@@ -30,7 +41,13 @@ export class FirebaseAuthClient implements AuthClient {
    * @description Get user, have to wait to load
    */
   getUser(): User {
-    return this.authClient.currentUser as User;
+    const currentUser = this.authClient.currentUser;
+    // return this.authClient.currentUser as User;
+    return {
+      email: currentUser?.email ?? '',
+      displayName: currentUser?.displayName ?? '',
+      avatar: currentUser?.photoURL ?? ''
+    }
   }
 
   getAuth(): Auth {
