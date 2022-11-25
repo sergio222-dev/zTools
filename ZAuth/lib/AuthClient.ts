@@ -1,6 +1,10 @@
 import {Auth} from "firebase/auth";
 
-export type User = {};
+export type User = {
+  displayName: string;
+  email: string;
+  avatar: string;
+};
 export type UserCredentials = {};
 export type CallbackAuthChanged = (user: User | null) => void;
 

@@ -82,7 +82,8 @@
     <script type="importmap-shim" defer>
       {
         "imports": {
-          "@ztools/mf-authorization": "https://localhost:3001/ztools-mf-authorization.ts"
+          "@ztools/mf-authorization": "https://localhost:3001/ztools-mf-authorization.ts",
+          "@ztools/mf-navbar": "https://localhost:3002/ztools-mf-navbar.ts"
         }
       }
     </script>
@@ -90,13 +91,20 @@
     <script type="importmap-shim" defer>
       {
         "imports": {
-          "@ztools/mf-authorization": "<%= VITE_MF_LOGIN_PROD %>/ztools-mf-authorization.js"
+          "@ztools/mf-authorization": "<%= VITE_MF_LOGIN_PROD %>/ztools-mf-authorization.js",
+          "@ztools/mf-authorization": "<%= VITE_MF_NAVBAR_PROD %>/ztools-mf-navbar.js"
         }
       }
     </script>
     <link
       rel="preload"
       href="<%= VITE_MF_LOGIN_PROD %>/assets/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="<%= VITE_MF_NAVBAR_PROD %>/assets/style.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
