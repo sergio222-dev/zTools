@@ -54,9 +54,10 @@
         "imports": {
           "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@latest/lib/esm/single-spa.dev.js",
           "react": "https://esm.sh/react@latest",
+          "react-dom": "https://esm.sh/react-dom@latest",
           "@emotion/styled": "https://esm.sh/@emotion/styled@latest",
           "@emotion/react": "https://esm.sh/@emotion/react@latest",
-          "react-dom": "https://esm.sh/react-dom@latest",
+          "@mui/material": "https://esm.sh/@mui/material@latest",
           "single-spa-react": "https://cdn.jsdelivr.net/npm/single-spa-react@latest/lib/esm/single-spa-react.js",
           "zauth-utility-module": "https://cdn.jsdelivr.net/npm/zauth-utility-module@latest/dist/zauth.js"
         }
@@ -92,7 +93,7 @@
       {
         "imports": {
           "@ztools/mf-authorization": "<%= VITE_MF_LOGIN_PROD %>/ztools-mf-authorization.js",
-          "@ztools/mf-authorization": "<%= VITE_MF_NAVBAR_PROD %>/ztools-mf-navbar.js"
+          "@ztools/mf-navbar": "<%= VITE_MF_NAVBAR_PROD %>/ztools-mf-navbar.js"
         }
       }
     </script>
@@ -135,7 +136,7 @@
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <script
       type="module-shim"
-      src="/Ztools-root-config.<%= isLocal ? 'ts' : 'js' %>"
+      src="/ztools-root-config.<%= isLocal ? 'ts' : 'js' %>"
     ></script>
     <import-map-overrides-full dev-libs></import-map-overrides-full>
   </body>

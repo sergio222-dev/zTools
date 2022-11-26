@@ -5,6 +5,9 @@ import handlebars from "vite-plugin-handlebars";
 import viteConfigPath from "vite-plugin-tsconfig-paths";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import mkcert from "vite-plugin-mkcert";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore

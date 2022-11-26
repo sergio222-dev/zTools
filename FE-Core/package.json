@@ -6,7 +6,7 @@
     "preview": "vite preview",
     "lint": "eslint */**/*.{js,jsx,ts,tsx} --fix",
     "prettier": "prettier --write .",
-    "prepare": "cd .. && husky install FE-Core/.husky"
+    "prepare:husky": "cd .. && husky install FE-Core/.husky"
   },
   "dependencies": {
     "@abraham/reflection": "^0.11.0",
@@ -19,6 +19,7 @@
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",

@@ -46,6 +46,7 @@ export default defineConfig(() => {
           "react-dom",
           "@emotion/react",
           "@emotion/styled",
+          "@mui/material",
           "zauth-utility-module",
         ],
       },

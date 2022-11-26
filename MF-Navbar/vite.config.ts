@@ -24,12 +24,12 @@ export default defineConfig(() => {
       manifest: true,
       rollupOptions: {
         input: {
-          "ztools-navbar": "./src/ztools-mf-navbar.ts",
+          "ztools-mf-navbar": "./src/ztools-mf-navbar.ts",
         },
         preserveEntrySignatures: "strict",
         output: {
           entryFileNames: "[name].js",
-          assetFileNames: "assets/[hash].[ext]",
+          assetFileNames: "assets/[name].[ext]",
           globals: {
             Reflect: "reflect-metadata",
           },
@@ -37,7 +37,15 @@ export default defineConfig(() => {
         plugins: [
           nodeResolve(), // enable tree shaking apparently
         ],
-        external: ["single-spa-react", "react", "react-dom"],
+        external: [
+          "single-spa-react",
+          "react",
+          "react-dom",
+          "@emotion/react",
+          "@emotion/styled",
+          "@mui/material",
+          "zauth-utility-module",
+        ],
       },
     },
     plugins: [
